@@ -36,24 +36,7 @@
         },
       };
     </script>
-    <style>
-      .card-hover {
-        transition: all 0.3s ease;
-      }
-      .card-hover:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-      .gradient-bg {
-        background: linear-gradient(135deg, #404040 0%, #262626 100%);
-      }
-      .gradient-accent {
-        background: linear-gradient(135deg, #ea580c, #c2410c);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="bg-neutral-50">
     <!-- Header -->
@@ -220,12 +203,12 @@
                   >Sobre nosotros</span
                 >
               </div>
-              <button
+              <a
               href="https://e-commerce.sanlaunch.com/"
-                class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded transition-colors"
+                class="w-full block text-center bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded transition-colors"
               >
                 Ver Ejemplo
-              </button>
+            </a>
             </div>
           </div>
 
@@ -380,31 +363,6 @@
       </div>
     </footer>
 
-    <script>
-      document.querySelectorAll("button").forEach((button) => {
-        button.addEventListener("click", function (e) {
-          if (this.textContent.includes("Ver Ejemplo")) {
-            e.preventDefault();
-            alert("Ejemplo disponible - Contacta para más información");
-          }
-        });
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-          }
-        });
-      });
-
-      document.querySelectorAll(".card-hover").forEach((card) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = "all 0.6s ease";
-        observer.observe(card);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
